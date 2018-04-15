@@ -44,7 +44,7 @@ field_name = token
 # See: https://www.rfc-editor.org/errata_search.php?rfc=7230&eid=4189
 #
 # So our definition of field_content attempts to fix it up...
-vchar_or_obs_text = r"[\x21-\xff]"
+vchar_or_obs_text = r"[\x01\x21-\xff]"
 field_vchar = vchar_or_obs_text
 field_content = r"{field_vchar}+(?:[ \t]+{field_vchar}+)*".format(**globals())
 
